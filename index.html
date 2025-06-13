@@ -98,9 +98,9 @@
         .jwt-signature { color: #60a5fa; }
     </style>
 </head>
-<body class="min-h-screen p-4 sm:p-6 lg:p-8">
+<body class="min-h-screen p-4 sm:p-6 lg:p-8 flex flex-col">
 
-    <div class="max-w-7xl mx-auto">
+    <div class="max-w-7xl mx-auto w-full flex-grow">
         <!-- Header -->
         <header class="text-center mb-8">
             <h1 class="text-3xl sm:text-4xl font-bold text-white">
@@ -320,6 +320,10 @@
         </div>
 
     </div>
+
+    <footer class="text-center py-4 mt-8 text-sm text-gray-500 border-t border-gray-700">
+        <p>&copy; <span id="footer-year"></span> SujoySec Tools. Created by Sujoy.</p>
+    </footer>
 
     <!--
     MD5 script from a trusted CDN.
@@ -638,6 +642,9 @@
                 info += `Current Time (UTC):   ${new Date().toUTCString()}`;
                 document.getElementById('system-output').textContent = info;
             }
+            
+            // --- Footer Year ---
+            document.getElementById('footer-year').textContent = new Date().getFullYear();
 
             // --- Event Listener for all Copy Buttons ---
             document.body.addEventListener('click', (e) => {
